@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html lang=en">
+<head>
+  <meta charset="ANSI">
+  <title>Camp Buddy Wiki</title>
+  <link rel="icon" href="https://campbuddy.github.io/favicon.ico" type="image/x-icon">
+  <script type="text/javascript">
+    //<!CDATA[
+        var bodyBgs = [];
+        bodyBgs[0] = "http://i1.fuimg.com/713450/9961b7f4cced3349.jpg";
+        bodyBgs[1] = "http://i2.tiimg.com/713450/847958d6827c360b.jpg";
+        bodyBgs[2] = "http://i2.tiimg.com/713450/05affbce7061ad5d.jpg";
+        bodyBgs[3] = "http://i1.fuimg.com/713450/c32d8f251a2f2b25.jpg";
+        bodyBgs[4] = "http://i2.tiimg.com/713450/6ede83c6195b7c05.jpg";
+        bodyBgs[5] = "http://i2.tiimg.com/713450/75d0bf75c00ad994.jpg";
+         var randomBgIndex = Math.round( Math.random() * 5 );
+        document.write('<style>body{background:url(' + bodyBgs[randomBgIndex] + ');background-position: center;background-attachment: fixed;background-size:contain;background-repeat: no-repeat;">}</style>');
+    //]]>
+</script>
+</head>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<div class="wrapper">
+        <div class="col-sm-12 col-md-8 col-lg-6 center-block" style="float: none;">
+            <div class="panel panel">
+                <div class="panel-heading font-bold" style="background: linear-gradient(to right,#14b7ff,#b221ff);color: white;"><script type="text/javascript">
+                        var now=(new Date()).getHours();
+                        if(now>0&&now<=5){
+                            document.write("夜深了，和营地众人一起进入美妙的梦乡吧！~");
+                        }else if(now>5&&now<=10){
+                            document.write("早上好，和营地众人一起迎接新的一天！~");
+                        }else if(now>10&&now<=13){
+                            document.write("中午好，和营地众人一起享受美味的午餐吧！~");
+                        }else if(now>13&&now<=18){
+                            document.write("下午好，和营地众人喝杯下午茶可好？~");
+                        }else{
+                            document.write("晚上好，和营地众人一起卧床夜话好吗？~");
+                        }
+			</script></b></font></h3></div></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<font size="12px"><strong>欢迎来到Camp Buddy Github Wiki！</font></strong></p>
+<hr />
+<font size="6px">注：本站使用的所有人物中文名皆为网络译名，非官方译名。</font></p></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<div style="margin:0 auto; text-align:center">
+	<div style="font-size:25px; color: blue;" id="date">
+		<span id="year">2017</span>-<span id="month">01</span>-<span id="day">01</span>
+	</div>
+ 
+	<div style="font-size:40px; color: black;" id="time">
+		<span id="h">12</span>:<span id="m">00</span>:<span id="s">00</span>
+	</div>
+</div>
+<script>
+ 
+var bfullscreen = false;
+function fullscreen() {
+	//document.documentElement.webkitRequestFullScreen();
+	//var docElm = document.documentElement;
+	//console.log(docElm)
+	if (!bfullscreen) {
+		if (document.requestFullscreen) { // w3c
+			document.requestFullscreen();
+		} else if (document.mozRequestFullScreen) { // FireFox
+			document.mozRequestFullScreen();
+		} else if (document.webkitRequestFullScreen) { // chrome
+			document.webkitRequestFullScreen();  
+		} else if (document.msRequestFullscreen) { // IE11
+			document.msRequestFullscreen();
+		}
+		bfullscreen = true;
+	} else {
+		if (document.exitFullscreen) {
+		    document.exitFullscreen();
+		} else if (document.mozCancelFullScreen) {
+		    document.mozCancelFullScreen();
+		} else if (document.webkitCancelFullScreen) {
+		    document.webkitCancelFullScreen();
+		} else if (document.msExitFullscreen) {
+		      document.msExitFullscreen();
+		}
+		bfullscreen = false;
+	}
+}
+function fontsizereset() {
+	var ed = document.getElementById("date");
+	var et = document.getElementById("time");
+	ed.style.fontSize = "48px";
+	et.style.fontSize = "160px";
+}
+function fontsizeup() {
+	var ed = document.getElementById("date");
+	var et = document.getElementById("time");
+	var vd = ed.style.fontSize;
+	var vt = et.style.fontSize;
+	vd = parseInt(vd.substring(0, vd.length - 2)) + 16;
+	vt = parseInt(vt.substring(0, vt.length - 2)) + 24;
+	if (vd > 240)
+		vd = 240;
+	if (vt > 360)
+		vt = 360;
+	ed.style.fontSize = vd + "px";
+	et.style.fontSize = vt + "px";
+}
+function fontsizedown() {
+	var ed = document.getElementById("date");
+	var et = document.getElementById("time");
+	var vd = ed.style.fontSize;
+	var vt = et.style.fontSize;
+	vd = parseInt(vd.substring(0, vd.length - 2)) - 20;
+	vt = parseInt(vt.substring(0, vt.length - 2)) - 20;
+	if (vd < 12)
+		vd = 12;
+	if (vt < 16)
+		vt = 16;
+	ed.style.fontSize = vd + "px";
+	et.style.fontSize = vt + "px";
+}
+ 
+// -------------------------------
+function updateDate(y, m, d) {
+	if (m < 10)
+		m = "0" + m;
+	if (d < 10)
+		d = "0" + d;
+	document.getElementById("year").innerHTML = y;
+	document.getElementById("month").innerHTML = m;
+	document.getElementById("day").innerHTML = d;
+}
+ 
+function updateTime(h, m, s, sss) {
+	if (h < 10)
+		h = "0" + h;
+	if (m < 10)
+		m = "0" + m;
+	if (s < 10)
+		s = "0" + s;
+	document.getElementById("h").innerHTML = h;
+	document.getElementById("m").innerHTML = m;
+	document.getElementById("s").innerHTML = s;
+	document.getElementById("sss").innerHTML = sss;
+}
+ 
+function update(){
+	var date = new Date();
+	updateDate(date.getFullYear(), date.getMonth() + 1, date.getDate());
+	updateTime(date.getHours(), date.getMinutes(), date.getSeconds(), parseInt(date.getMilliseconds() / 100));
+ 
+};
+setInterval("update()",100);
+</script>
+</table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<font size="10px"><strong>主要人物</font></strong></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<a href="https://campbuddy.github.io/Main_Characters/Keitaro_Nagame.html"><button><font size="6px">Keitaro Nagame（长目 景太郎）</font></button></a></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<a href="https://campbuddy.github.io/Main_Characters/Hiro_Akiba.html"><button><font size="6px">Hiro Akiba（秋叶 宏）</font></button></a></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<a href="https://campbuddy.github.io/Main_Characters/Natsumi_Hamasaki.html"><button><font size="6px">Natsumi Hamasaki（滨崎 夏海）</font></button></a></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<a href="https://campbuddy.github.io/Main_Characters/Yoichi_Yukimura.html"><button><font size="6px">Yoichi Yukimura（雪村 洋一）</font></button></a></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top"><a href="https://campbuddy.github.io/Main_Characters/Hunter_SpringField.html"><button><font size="6px">Hunter SpringField（亨特·斯普林菲德）</font></button></a></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top"><a href="https://campbuddy.github.io/Main_Characters/Taiga_Akatora.html"><button><font size="6px">Taiga Akatora（赤虎 太贺）</font></button></a></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<font size="10px"><strong>次要人物</font></strong></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<a href="https://campbuddy.github.io/Side_Characters/Yoshinori_Nagira.html"><button><font size="6px">Yoshinori Nagira（吉野 胜男）</font></button></a></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<a href="https://campbuddy.github.io/Side_Characters/Aiden_Flynn.html"><button><font size="6px">Aiden Flynn（艾登·弗莱恩）</font></button></a></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<a href="https://campbuddy.github.io/Side_Characters/Shintaro_Seto_Aihara.html"><button><font size="6px">Shintaro 'Seto' Aihara（相原 伸太郎）</font></button></a></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<a href="https://campbuddy.github.io/Side_Characters/Felix_Clermont.html"><button><font size="6px">Felix Clermont（菲利克斯·克莱蒙特）</font></button></a></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<a href="https://campbuddy.github.io/Side_Characters/Goro_Nomoru.html"><button><font size="6px">Goro Nomoru（吾郎 守）</font></button></a></table></center>
+<br/>
+<center><table style="width: 950.0px;border-width: 2px;border-style: solid;border-color: #000000;background-color:rgba(135,206,250,0.8)"><td align="center" valign="top">
+<a href="https://campbuddy.github.io/Side_Characters/Yuri_Nomoru.html"><button><font size="6px">Yuri Nomoru（由里 守）</font></button></a></table></center>
+</body>
+</html>
